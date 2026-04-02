@@ -19,8 +19,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "古健樺的個人履歷",
-  description: "古健樺的個人履歷",
+  title: "個人履歷",
+  description: "個人履歷",
 };
 
 export default function RootLayout({
