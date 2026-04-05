@@ -39,6 +39,22 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --background: #f0f0f0;         /* 背景改淺灰色，讓色塊更跳 */
+  --foreground: #1a1a1a;         /* 文字接近純黑 */
+
+  --primary: #FF7EB9;            /* 鮮艷粉 */
+  --primary-foreground: #ffffff;
+  
+  --secondary: #70D6FF;          /* 電擊藍 */
+  --secondary-foreground: #1a1a1a;
+
+  --accent: #00F5D4;             /* 螢光綠 */
+  --accent-foreground: #1a1a1a;
+
+  --border: #000000;             /* 邊框直接用純黑 */
+  --radius: 1rem;                /* 圓角加大 */
+  
+  --accent-color: #FEE440;
 }
 
 html,
@@ -140,5 +156,31 @@ body {
   }
   html {
     @apply font-sans;
+  }
+}
+
+@layer components {
+  .retro-box {
+    @apply bg-white border-[3px] border-black rounded-[20px] p-6;
+    box-shadow: 8px 8px 0px 0px #000000; /* 核心：硬陰影 */
+    transition: all 0.2s ease;
+  }
+
+  .retro-box:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 12px 12px 0px 0px #000000;
+  }
+
+  /* 幾何花朵基礎樣式 */
+  .accent-flower {
+    @apply relative w-12 h-12 flex items-center justify-center;
+    background-color: var(--primary);
+    border: 2px solid black;
+    border-radius: 40% 60% 40% 60% / 60% 40% 60% 40%; /* 幾何感形狀 */
+  }
+
+  .accent-flower::after {
+    content: '';
+    @apply absolute w-3 h-3 bg-white border-2 border-black rounded-full;
   }
 }
