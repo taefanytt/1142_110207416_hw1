@@ -44,9 +44,12 @@ export default function Others() {
           <h1 className="text-6xl md:text-7xl font-black tracking-tighter text-black uppercase mb-4">
             Others ✿
           </h1>
-          <div className="space-y-2">
-            <p className="text-[15px] text-gray-800 leading-relaxed max-w-2xl font-bold italic">
+          <div className="space-y-3">
+            <p className="text-[15px] text-gray-600 leading-relaxed max-w-2xl font-bold italic">
               Lifestyle / Inspiration / A collection of moments from 2026.
+            </p>
+            <p className="text-[10px] text-right text-gray-500 font-black uppercase tracking-[0.4em] animate-pulse">
+              Scroll to explore more →
             </p>
           </div>
         </header>
@@ -71,19 +74,19 @@ export default function Others() {
                   </h3>
                 </div>
 
-                {/* 圖片展示區：改回純白背景 + 原圖展示 */}
+                {/* 圖片展示區 */}
                 <div className="grid grid-cols-2 grid-rows-2 gap-3 flex-1">
                   {item.images.slice(0, 4).map((imgSrc, imgIdx) => (
                     <div 
                       key={imgIdx} 
-                      className="relative w-full h-full rounded-xl overflow-hidden bg-white" // 改回純白背景
+                      className="relative w-full h-full rounded-xl overflow-hidden bg-white"
                     >
                       <Image 
                         src={imgSrc} 
                         alt={`${item.title} image ${imgIdx + 1}`} 
                         fill 
                         sizes="(max-width: 768px) 40vw, 200px"
-                        className="object-contain" // 移除 p-2，讓原圖比例自然呈現
+                        className="object-contain" 
                         unoptimized 
                       />
                     </div>

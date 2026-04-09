@@ -31,7 +31,7 @@ export default function About() {
             Hello ✿
           </h1>
           <div className="space-y-2">
-            <p className="text-[15px] text-gray-800 leading-relaxed max-w-2xl font-bold italic">
+            <p className="text-[15px] text-gray-600 leading-relaxed max-w-2xl font-bold italic">
               我是子0！這裡是我在數位世界裡蓋的小花園，收集了各種奇思妙想。
             </p>
           </div>
