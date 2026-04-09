@@ -3,7 +3,7 @@ import { Geist, Bubblegum_Sans } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
 import Link from "next/link";
-import { FaInstagram, FaFacebookF, FaEnvelope } from "react-icons/fa"; // 圖示
+import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa"; // 引入 LinkedIn 圖示
 
 const primaryBubbleFont = Bubblegum_Sans({
   variable: "--font-bubble",
@@ -35,11 +35,20 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
 
-  // 【 社群連結 】
+  // 【 社群連結配置 】
   const socialLinks = [
-    { icon: <FaInstagram size={16} />, href: "https://www.instagram.com/taefanytt" },
-    { icon: <FaFacebookF size={14} />, href: "https://www.facebook.com/huang.zi.ling.42830?locale=zh_TW" },
-    { icon: <FaEnvelope size={16} />, href: "tinahuang1209@gmail.com" },
+    { 
+      icon: <FaInstagram size={16} />, 
+      href: "https://www.instagram.com/taefanytt" 
+    },
+    { 
+      icon: <FaFacebookF size={14} />, 
+      href: "https://www.facebook.com/huang.zi.ling.42830?locale=zh_TW" 
+    },
+    { 
+      icon: <FaLinkedinIn size={16} />, 
+      href: "https://www.linkedin.com/in/zihling-huang-4865b4259/" // 請替換為您的 LinkedIn 帳號網址
+    },
   ];
 
   return (
@@ -50,31 +59,31 @@ export default function RootLayout({
           {/* --- 左側導覽列 --- */}
           <aside className="bg-white w-[300px] h-full p-10 border-r-[3px] border-black flex flex-col z-50 shadow-[5px_0px_20px_rgba(0,0,0,0.02)]">
             
-          {/* 1. 頭像與名字區 */}
-          <div className="flex flex-col items-center gap-6 mb-6">
-            <div className="relative w-[130px] h-[130px] border-[3px] border-black rounded-full overflow-hidden bg-white">
-              <Image 
-                src="/me.jpg"
-                alt="me" 
-                fill
-                sizes="130px" 
-                className="object-cover object-[center_80%]" // 調整照片重心位置
-                priority // 這是首屏重要圖片，建議加上 priority 提升載入速度
-              />
+            {/* 1. 頭像與名字區 */}
+            <div className="flex flex-col items-center gap-6 mb-6">
+              <div className="relative w-[130px] h-[130px] border-[3px] border-black rounded-full overflow-hidden bg-white">
+                <Image 
+                  src="/me.jpg"
+                  alt="me" 
+                  fill
+                  sizes="130px" 
+                  className="object-cover object-[center_80%]" // 維持您滿意的位置效果
+                  priority 
+                />
+              </div>
+              <div className="text-center">
+                <h2 className="text-2xl font-black tracking-tighter text-black uppercase leading-tight">
+                  ZihLing Huang
+                </h2>
+              </div>
             </div>
-            <div className="text-center">
-              <h2 className="text-2xl font-black tracking-tighter text-black uppercase leading-tight">
-                ZihLing Huang
-              </h2>
-            </div>
-          </div>
 
             {/* 2. 社群連結區 */}
             <div className="flex justify-center flex-wrap gap-3 mb-8">
               {socialLinks.map((social, i) => (
                 <a 
                   key={i} 
-                  href={social.href} // 使用上面定義的連結
+                  href={social.href} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-9 h-9 flex items-center justify-center border-2 border-black rounded-full bg-white shadow-[2px_2px_0px_black] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all"
