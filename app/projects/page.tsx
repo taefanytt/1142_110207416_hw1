@@ -56,7 +56,7 @@ export default function Projects() {
           src="/tulip_new.jpg" 
           alt="background" 
           fill 
-          className="object-cover opacity-[0.15] blur-[15px]" 
+          className="object-cover opacity-[0.15] blur-[20px] scale-110" 
           priority
         />
       </div>
@@ -66,16 +66,16 @@ export default function Projects() {
         {/* --- 1. 頂部介紹 (與 About Me 統一規格) --- */}
         <header className="mb-20 border-b-2 border-black pb-8">
           <h1 className="text-7xl font-black tracking-tighter text-black uppercase mb-4">
-            Projects ✿
+            Projects
           </h1>
           <div className="space-y-2">
             <p className="text-[15px] text-gray-800 leading-relaxed max-w-2xl font-bold italic">
-              Selected Works
+              Selected Works Catalog / 這裡收集了我近期在 GIS、UI/UX 與數據分析領域的實踐。
             </p>
           </div>
         </header>
 
-        {/* --- 2. 櫥窗網格 --- */}
+        {/* --- 2. 櫥窗網格 (加上響應式 grid-cols-1 md:grid-cols-2) --- */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-20">
           
           {projects.map((project, index) => (
@@ -83,25 +83,23 @@ export default function Projects() {
               key={index} 
               className={`group flex flex-col ${index % 2 !== 0 ? 'md:mt-20' : ''}`}
             >
-              {/* --- 圖片外框：回歸經典黑框與硬陰影 --- */}
-              <div className="relative aspect-[16/10] w-full border-[3px] border-black rounded-[20px] overflow-hidden bg-white shadow-[10px_10px_0px_black] transition-all duration-300 group-hover:translate-x-1 group-hover:translate-y-1 group-hover:shadow-none">
+              <div className="relative aspect-[16/10] w-full border-[3px] border-black rounded-[20px] overflow-hidden bg-white shadow-[10px_10px_0px_black] transition-all duration-300">
                 
-                {/* 圖片容器：不裁切完整顯示 */}
-                <div className="flex h-full w-full overflow-x-auto snap-x snap-mandatory scrollbar-hide bg-[#F2F2F2]">
+                <div className="flex h-full w-full overflow-x-auto snap-x snap-mandatory scrollbar-hide bg-[#FBFBFB]">
                   {project.images.map((imgSrc, imgIdx) => (
                     <div key={imgIdx} className="relative h-full w-full flex-shrink-0 snap-center">
                       <Image 
                         src={imgSrc} 
                         alt={project.title} 
                         fill 
-                        className="object-contain p-4" // 確保圖片不裁切且不貼邊
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-contain p-4" 
                         unoptimized 
                       />
                     </div>
                   ))}
                 </div>
 
-                {/* 指示條 */}
                 <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5">
                   {project.images.map((_, dotIdx) => (
                     <div key={dotIdx} className="w-5 h-[2.5px] bg-black/10 rounded-full" />
@@ -109,8 +107,7 @@ export default function Projects() {
                 </div>
               </div>
 
-              {/* 文字說明：回歸有力的左側對齊 --- */}
-              <div className="mt-8 px-2">
+              <div className="mt-8 px-2 text-left">
                 <div className="flex flex-col gap-2">
                   <p className="text-[11px] font-black uppercase tracking-[0.2em]" style={{ color: project.color }}>
                     {project.tag}
