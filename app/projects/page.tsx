@@ -4,106 +4,141 @@ import Image from "next/image"
 export default function Projects() {
   const projects = [
     {
-      title: "畢業製作「感知漂流：內在宇宙觀測計劃」",
-      desc: "透過視線追蹤、頭部與手部動作作為互動媒介，喚醒你的內在星球上的光影與紋理。",
-      tag: "Interactive Design",
+      title: "感知漂流：內在宇宙觀測計劃",
+      desc: "畢業製作。透過視線追蹤作為互動媒介，喚醒內在星球上的光影與紋理。",
+      tag: "Interactive / Vision",
       color: "#FF7EB9",
+      images: ["/grad-1.jpg", "/grad-2.jpg"] 
     },
     {
       title: "Ubike 介面重新設計",
-      desc: "透過訪問了解使用者痛點，以此優化APP，提升用戶使用體驗。",
-      tag: "UI/UX",
+      desc: "優化 APP 流程，提升通勤族在租借地圖交互上的使用效率。",
+      tag: "UI/UX Research",
       color: "#70D6FF",
+      images: ["/ubike-1.png", "/ubike-2.png"]
+    },
+    {
+      title: "圖資與地址搜尋優化",
+      desc: "55688 實習專案。利用模糊比對技術優化搜尋準確度並建立測試框架。",
+      tag: "Search Engineering",
+      color: "#A29BFE", 
+      images: ["/search-1.png"]
     },
     {
       title: "StoryMap：沉沒村莊",
-      desc: "運用 ArcGIS 進行古今地圖對比與居民訪談，視覺化翡翠水庫、石門水庫建設前後的聚落變遷。",
-      tag: "GIS/Data Analysis",
+      desc: "運用 ArcGIS 進行古今地圖對比，視覺化水庫建設前後的聚落變遷。",
+      tag: "GIS / Storytelling",
       color: "#00F5D4",
+      images: ["/沉沒村莊1.png", "/沉沒村莊2.png", "/沉沒村莊3.png"]
     },
     {
       title: "交通可及性與 SDG 評估",
-      desc: "使用 ArcGIS 與 Excel進行全國空間分析，繪製全台交通可及性地圖，評估永續發展進度。",
-      tag: "GIS/Data Analysis",
+      desc: "使用 ArcGIS 進行全國空間分析，繪製全台交通圖資並評估發展進度。",
+      tag: "Spatial Analysis",
       color: "#FEE440",
+      images: ["/sdg-1.png", "/sdg-2.png", "/sdg-3.png"]
     },
     {
       title: "AI 跨域：農地違建辨識",
-      desc: "結合航空攝影測量與 AI 影像辨識，自動偵測航照圖中的非法建物與面積計算。",
+      desc: "結合航測影像與 AI 辨識，自動偵測航照圖中的非法建物與面積計算。",
       tag: "AI / Photogrammetry",
       color: "#000000",
+      images: ["/ai-1.png", "/ai-2.png", "/ai-3.png"]
     }
   ];
 
   return (
-    <div className="max-w-5xl mx-auto py-12 px-6 animate-in fade-in slide-in-from-bottom-5 duration-700">
+    <div className="relative min-h-full w-full"> 
       
-      {/* --- 1. 頂部標題與簡介 --- */}
-      <section className="mb-16">
-        <div className="flex items-baseline gap-4 mb-6">
-          <h1 className="font-bubble text-6xl md:text-7xl text-[#70D6FF] italic uppercase tracking-tighter"
-              style={{ WebkitTextStroke: "2px #000000", filter: "drop-shadow(4px 4px 0px black)" }}>
-            Projects
-          </h1>
-          <span className="text-gray-400 font-bold italic">/ Selected Works</span>
-        </div>
-        <p className="max-w-2xl text-[14px] text-gray-500 leading-relaxed font-medium border-l-4 border-black pl-6">
-          從 GIS 空間分析到 UI/UX 實踐，我致力於將複雜的數據轉化為直覺的視覺敘事。
-          透過 AI 影像辨識、地圖建模與使用者研究，探索數位內容的多元可能。
-        </p>
-      </section>
-
-      {/* --- 2. 專案網格 (交錯佈局) --- */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-16">
-        
-        {projects.map((project, index) => (
-          <div 
-            key={index} 
-            className={`group relative flex flex-col transition-transform hover:-translate-y-2 duration-300 ${index % 2 !== 0 ? 'md:mt-16' : ''}`}
-          >
-            {/* 預覽圖容器 */}
-            <div className="relative aspect-[16/9] w-full border-[3px] border-black rounded-[32px] overflow-hidden bg-white shadow-[8px_8px_0px_black] group-hover:shadow-[12px_12px_0px_black] transition-all">
-              <div className="absolute inset-0 flex items-center justify-center text-gray-200 font-black italic uppercase tracking-widest text-lg opacity-10">
-                {project.tag}
-              </div>
-              
-              {/* 這裡未來放入圖片: <Image src={...} fill className="object-cover" /> */}
-
-              {/* 圖片上方的彩色標籤 (Home Style) */}
-              <div 
-                className="absolute top-5 left-5 px-4 py-1.5 border-2 border-black rounded-full text-[10px] font-black uppercase tracking-wider shadow-[3px_3px_0px_black]"
-                style={{ backgroundColor: project.color, color: project.color === '#000000' ? 'white' : 'black' }}
-              >
-                {project.tag}
-              </div>
-            </div>
-
-            {/* 文字說明區 */}
-            <div className="mt-8 px-2">
-              <h3 className="text-2xl font-black italic tracking-tight mb-3 group-hover:underline decoration-4 underline-offset-4">
-                {project.title}
-              </h3>
-              <p className="text-[13px] text-gray-600 font-medium leading-relaxed">
-                {project.desc}
-              </p>
-            </div>
-          </div>
-        ))}
-
-        {/* 底部 Want to collab? 方塊 */}
-        <div className="md:mt-32 border-4 border-black border-dashed rounded-[32px] p-12 flex flex-col items-center justify-center text-center opacity-40 hover:opacity-100 transition-opacity">
-           <div className="text-4xl mb-4">✿</div>
-           <p className="font-black text-xl italic mb-1 uppercase">Ready for Next?</p>
-           <p className="text-xs font-bold underline">tiff@garden.design</p>
-        </div>
-
+      {/* --- 全局背景圖 --- */}
+      <div className="fixed inset-0 -z-10 pointer-events-none">
+        <Image 
+          src="/tulip_new.jpg" 
+          alt="background" 
+          fill 
+          className="object-cover opacity-[0.15] blur-[15px]" 
+          priority
+        />
       </div>
 
-      <footer className="mt-32 text-center pb-12">
-        <p className="text-[11px] text-gray-400 font-bold tracking-[0.3em] uppercase">
-          Digital Portfolio ✿ 2026
-        </p>
-      </footer>
+      <div className="relative z-10 max-w-6xl mx-auto py-20 px-10 animate-in fade-in duration-1000 pb-24">
+        
+        {/* --- 1. 頂部介紹 (與 About Me 統一規格) --- */}
+        <header className="mb-20 border-b-2 border-black pb-8">
+          <h1 className="text-7xl font-black tracking-tighter text-black uppercase mb-4">
+            Projects ✿
+          </h1>
+          <div className="space-y-2">
+            <p className="text-[15px] text-gray-800 leading-relaxed max-w-2xl font-bold italic">
+              Selected Works
+            </p>
+          </div>
+        </header>
+
+        {/* --- 2. 櫥窗網格 --- */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-20">
+          
+          {projects.map((project, index) => (
+            <div 
+              key={index} 
+              className={`group flex flex-col ${index % 2 !== 0 ? 'md:mt-20' : ''}`}
+            >
+              {/* --- 圖片外框：回歸經典黑框與硬陰影 --- */}
+              <div className="relative aspect-[16/10] w-full border-[3px] border-black rounded-[20px] overflow-hidden bg-white shadow-[10px_10px_0px_black] transition-all duration-300 group-hover:translate-x-1 group-hover:translate-y-1 group-hover:shadow-none">
+                
+                {/* 圖片容器：不裁切完整顯示 */}
+                <div className="flex h-full w-full overflow-x-auto snap-x snap-mandatory scrollbar-hide bg-[#F2F2F2]">
+                  {project.images.map((imgSrc, imgIdx) => (
+                    <div key={imgIdx} className="relative h-full w-full flex-shrink-0 snap-center">
+                      <Image 
+                        src={imgSrc} 
+                        alt={project.title} 
+                        fill 
+                        className="object-contain p-4" // 確保圖片不裁切且不貼邊
+                        unoptimized 
+                      />
+                    </div>
+                  ))}
+                </div>
+
+                {/* 指示條 */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5">
+                  {project.images.map((_, dotIdx) => (
+                    <div key={dotIdx} className="w-5 h-[2.5px] bg-black/10 rounded-full" />
+                  ))}
+                </div>
+              </div>
+
+              {/* 文字說明：回歸有力的左側對齊 --- */}
+              <div className="mt-8 px-2">
+                <div className="flex flex-col gap-2">
+                  <p className="text-[11px] font-black uppercase tracking-[0.2em]" style={{ color: project.color }}>
+                    {project.tag}
+                  </p>
+                  <h3 className="text-2xl font-black tracking-tight text-black">
+                    {project.title}
+                  </h3>
+                  <p className="text-[13px] text-gray-500 font-medium leading-relaxed mt-1 max-w-[95%]">
+                    {project.desc}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+
+        </div>
+
+        <footer className="mt-32 text-center border-t border-black/5 pt-16">
+          <p className="text-[10px] text-gray-300 font-bold tracking-[0.5em] uppercase">
+            Tiff&apos;s Portfolio Gallery ✿ 2026
+          </p>
+        </footer>
+      </div>
+
+      <style jsx global>{`
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+      `}</style>
     </div>
   );
 }

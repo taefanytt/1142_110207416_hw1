@@ -3,46 +3,55 @@ import Image from "next/image"
 
 export default function Home() {
   return (
-    // justify-start + pt-32 讓整體內容上移到背景中湖泊的位置
-    <div className="relative min-h-screen w-full flex flex-col items-center justify-start pt-45 overflow-hidden">
+    <div className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden">
       
-      {/* 滿版背景圖片 */}
+      {/* 1. 首頁專屬背景：這層會覆蓋在 Layout 的淡背景之上 */}
       <div className="absolute inset-0 -z-10">
         <Image 
-          src="/bg.jpg" 
-          alt="Tulip Background" 
+          src="/tulip_new.jpg" 
+          alt="My Tulip Garden" 
           fill 
-          className="object-cover brightness-105" 
+          className="object-cover opacity-50 blur-[30px] scale-110" 
           priority
+          onLoad={() => console.log("背景圖載入成功")}
         />
-        {/* 輕微的明亮度調整，確保標題突出 */}
-        <div className="absolute inset-0 bg-white/5" /> 
+        {/* 極薄的白色濾鏡，增加紙張顆粒感 */}
+        <div className="absolute inset-0 bg-white/10" />
       </div>
 
-      {/* 主標題：套用 Bubblegum 字體、白色描邊與白色硬陰影 */}
-      <div className="relative animate-in fade-in zoom-in duration-1000 scale-90 md:scale-80">
-        <h1 
-          className="font-bubble text-[120px] md:text-[160px] font-black leading-[0.75] tracking-tighter uppercase text-center select-none"
-          style={{
-            color: "#FEE440", 
-            // 白色粗描邊：增加圓潤感
-            WebkitTextStroke: "1px #e6465c",
-            // 白色硬邊陰影：營造泡泡糖貼紙的厚度立體感
-            filter: "drop-shadow(10px 10px 0px #e6465c)"
-          }}
-        >
-          <span className="block">Tiff's</span>
-          <span className="block">Garden</span>
-        </h1>
-      </div>
-
-      {/* 底部裝飾 */}
-      <div className="absolute bottom-10 flex flex-col items-center">
-        <p className="font-bold text-lg text-black bg-[#FEE440] border-2 border-black px-6 py-2 rotate-[-2deg] shadow-[4px_4px_0px_black]">
-          WELCOME TO MY PAGE ✿
+      {/* 2. 主標題 */}
+      <header className="relative animate-in fade-in zoom-in duration-1000 flex flex-col items-center">
+        <p className="text-[10px] font-black tracking-[0.8em] text-[#344E41]/40 uppercase mb-10 opacity-80">
+          Down the Rabbit Hole
         </p>
-      </div>
 
+        <div className="relative">
+          <h1 className="text-center select-none uppercase tracking-tighter"
+              style={{ color: "#344E41", filter: "drop-shadow(8px 8px 0px #FEE440)" }}>
+            <span className="block text-[130px] md:text-[180px] font-black leading-[0.75] -rotate-2">
+              Tiff's
+            </span>
+            <div className="flex items-center justify-center gap-6 mt-4">
+              <div className="h-[1px] w-16 bg-[#344E41]/20" />
+              <span className="text-[36px] md:text-[50px] font-medium tracking-[0.4em] text-[#344E41]/80">
+                Garden
+              </span>
+              <div className="h-[1px] w-16 bg-[#344E41]/20" />
+            </div>
+          </h1>
+          <span className="absolute -top-10 -right-12 text-5xl text-[#FF7EB9]/40 animate-pulse hidden md:block">✿</span>
+        </div>
+      </header>
+
+      {/* 3. 進入按鈕 */}
+      <div className="absolute bottom-24 group cursor-pointer">
+        <div className="relative">
+          <p className="font-black text-[12px] text-white bg-[#344E41] px-14 py-4 rounded-full tracking-[0.4em] uppercase transition-all duration-300 group-hover:bg-[#FEE440] group-hover:text-[#344E41] shadow-[10px_10px_0px_rgba(52,78,65,0.1)]">
+            Open the Door
+          </p>
+          <div className="absolute -top-1 -right-1 w-4 h-4 bg-[#FF7EB9] rounded-full border-[3px] border-white shadow-[2px_2px_0px_black]" />
+        </div>
+      </div>
     </div>
   );
 }
