@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image"
 
-export default function Others() {
+export default function Favorites() {
   const items = [
     { 
       title: "Reading List", 
@@ -41,9 +41,9 @@ export default function Others() {
         
         {/* --- 1. 頂部標題區 --- */}
         <header className="mb-20 border-b-2 border-black pb-8">
-          <h1 className="text-6xl md:text-7xl font-black tracking-tighter text-black uppercase mb-4">
-            Others ✿
-          </h1>
+          <h2 className="text-6xl md:text-7xl font-black tracking-tighter text-black uppercase mb-4">
+            Favorites ✿
+          </h2>
           <div className="space-y-3">
             <p className="text-[15px] text-gray-600 leading-relaxed max-w-2xl font-bold italic">
               Lifestyle / Inspiration / A collection of moments from 2026.

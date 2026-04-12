@@ -64,8 +64,8 @@ export default function GeospatialProjects() {
     },
     {
       id: "ai",
-      title: "AI跨域X永續創新競賽—— 利用影像辨識自動判斷農地違建",
-      desc: "受農地違建議題啟發，決定結合航空攝影測量及AI這兩門課所學，使用影像辨識軟體設定參數後，辨識航照圖中的農地建物，計算農地上建物之面積，實際操作中克服資料不足與辨識精度挑戰，偵測出違法的土地。",
+      title: "AI跨域X永續創新競賽",
+      desc: "以「利用影像辨識自動判斷農地違建」為題，受農地違建議題啟發，決定結合航空攝影測量及AI這兩門課所學，使用影像辨識軟體設定參數後，辨識航照圖中的農地建物，計算農地上建物之面積，實際操作中克服資料不足與辨識精度挑戰，偵測出違法的土地。",
       color: "#000000",
       images: ["/ai-1.png", "/ai-2.png", "/ai-3.png"],
       fit: "cover"
@@ -82,7 +82,7 @@ export default function GeospatialProjects() {
       <div className="relative z-10 max-w-6xl mx-auto py-20 px-6 md:px-10 animate-in fade-in duration-1000 pb-24">
         {/* Header 區塊 */}
         <header className="mb-20 border-b-2 border-black pb-8">
-          <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-black uppercase mb-4">Spatial Analysis ✿</h1>
+          <h2 className="text-5xl md:text-7xl font-black tracking-tighter text-black uppercase mb-4">Spatial Analysis ✿</h2>
           <div className="flex justify-between items-end">
             <p className="text-[14px] md:text-[15px] text-gray-600 leading-relaxed max-w-2xl font-bold italic"> Selected Projects Catalog </p>
             <p className="text-[10px] text-gray-500 font-black uppercase tracking-[0.4em] animate-pulse hidden sm:block">Scroll cards to explore →</p>
