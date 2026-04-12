@@ -82,9 +82,9 @@ export default function GeospatialProjects() {
       <div className="relative z-10 max-w-6xl mx-auto py-20 px-6 md:px-10 animate-in fade-in duration-1000 pb-24">
         {/* Header 區塊 */}
         <header className="mb-20 border-b-2 border-black pb-8">
-          <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-black uppercase mb-4">Geospatial Analysis ✿</h1>
+          <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-black uppercase mb-4">Spatial Analysis ✿</h1>
           <div className="flex justify-between items-end">
-            <p className="text-[14px] md:text-[15px] text-gray-600 leading-relaxed max-w-2xl font-bold italic">GIS / Spatial Data Science / Remote Sensing / AI Integration</p>
+            <p className="text-[14px] md:text-[15px] text-gray-600 leading-relaxed max-w-2xl font-bold italic"> Selected Projects Catalog </p>
             <p className="text-[10px] text-gray-500 font-black uppercase tracking-[0.4em] animate-pulse hidden sm:block">Scroll cards to explore →</p>
           </div>
         </header>

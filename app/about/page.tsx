@@ -27,9 +27,9 @@ export default function About() {
         
         {/* --- 1. 頂部介紹 (About Me) --- */}
         <header className="mb-20 border-b-2 border-black pb-8">
-          <h1 className="text-7xl font-black tracking-tighter text-black uppercase mb-4">
+          <h2 className="text-7xl font-black tracking-tighter text-black uppercase mb-4">
             Hello ✿
-          </h1>
+          </h2>
           <div className="space-y-2">
             <p className="text-[15px] text-gray-600 leading-relaxed max-w-2xl font-bold italic">
               我是子0！這裡是我在數位世界裡蓋的小花園，收集了各種奇思妙想。
