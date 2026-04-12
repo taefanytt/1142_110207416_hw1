@@ -82,7 +82,7 @@ export default function About() {
 
               <div className="flex flex-col md:flex-row justify-between gap-4">
                 <div className="space-y-1 pl-4 border-l-4 border-[#70D6FF]">
-                  <h3 className="text-xl font-black text-black">Utrecht University</h3>
+                  <h3 className="text-xl font-black text-black">荷蘭烏特勒支大學</h3>
                   <p className="text-[14px] font-bold text-[#70D6FF]">交換學生</p>
                 </div>
                 <span className="text-[14px] font-black text-gray-400 tabular-nums italic">2025.01 — 2025.06</span>
