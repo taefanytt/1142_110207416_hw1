@@ -1,11 +1,12 @@
 "use client"
 import Image from "next/image"
+import Link from "next/link" // 1. 引入 Link 元件
 
 export default function Home() {
   return (
     <div className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden">
       
-      {/* 1. 首頁專屬背景：這層會覆蓋在 Layout 的淡背景之上 */}
+      {/* 1. 首頁專屬背景 */}
       <div className="absolute inset-0 -z-10">
         <Image 
           src="/tulip_new.jpg" 
@@ -13,9 +14,7 @@ export default function Home() {
           fill 
           className="object-cover opacity-50 blur-[30px] scale-110" 
           priority
-          onLoad={() => console.log("背景圖載入成功")}
         />
-        {/* 極薄的白色濾鏡，增加紙張顆粒感 */}
         <div className="absolute inset-0 bg-white/10" />
       </div>
 
@@ -43,14 +42,18 @@ export default function Home() {
         </div>
       </header>
 
-      {/* 3. 進入按鈕 */}
-      <div className="absolute bottom-24 group cursor-pointer">
-        <div className="relative">
-          <p className="font-black text-[12px] text-white bg-[#344E41] px-14 py-4 rounded-full tracking-[0.4em] uppercase transition-all duration-300 group-hover:bg-[#FEE440] group-hover:text-[#344E41] shadow-[10px_10px_0px_rgba(52,78,65,0.1)]">
-            Open the Door
-          </p>
-          <div className="absolute -top-1 -right-1 w-4 h-4 bg-[#FF7EB9] rounded-full border-[3px] border-white shadow-[2px_2px_0px_black]" />
-        </div>
+      {/* 3. 進入按鈕 (加上 Link) */}
+      <div className="absolute bottom-24">
+        <Link href="/about" className="group cursor-pointer block relative active:scale-95 transition-transform">
+          <div className="relative">
+            {/* 按鈕文字 */}
+            <p className="font-black text-[11px] md:text-[12px] text-white bg-[#344E41] px-10 md:px-14 py-4 rounded-full tracking-[0.3em] md:tracking-[0.4em] uppercase transition-all duration-300 group-hover:bg-[#FEE440] group-hover:text-[#344E41] shadow-[10px_10px_0px_rgba(52,78,65,0.1)]">
+              Open the Door
+            </p>
+            {/* 裝飾小圓點 */}
+            <div className="absolute -top-1 -right-1 w-4 h-4 bg-[#FF7EB9] rounded-full border-[3px] border-white shadow-[2px_2px_0px_black] group-hover:rotate-[360deg] transition-transform duration-500" />
+          </div>
+        </Link>
       </div>
     </div>
   );
