@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image"
-import Link from "next/link" // 1. 引入 Link 元件
+import Link from "next/link"
 
 export default function Home() {
   return (
@@ -15,6 +15,7 @@ export default function Home() {
           className="object-cover opacity-50 blur-[30px] scale-110" 
           priority
         />
+        {/* 極薄的白色濾鏡，增加紙張顆粒感 */}
         <div className="absolute inset-0 bg-white/10" />
       </div>
 
@@ -25,8 +26,12 @@ export default function Home() {
         </p>
 
         <div className="relative">
+          {/* 調整處：將 drop-shadow 位移從 8px 改為 3px，讓黃色陰影緊貼綠色字 */}
           <h1 className="text-center select-none uppercase tracking-tighter"
-              style={{ color: "#344E41", filter: "drop-shadow(8px 8px 0px #FEE440)" }}>
+              style={{ 
+                color: "#344E41", 
+                filter: "drop-shadow(3px 3px 0px #FEE440)" 
+              }}>
             <span className="block text-[130px] md:text-[180px] font-black leading-[0.75] -rotate-2">
               Tiff's
             </span>
@@ -38,11 +43,12 @@ export default function Home() {
               <div className="h-[1px] w-16 bg-[#344E41]/20" />
             </div>
           </h1>
+          {/* 裝飾小花 */}
           <span className="absolute -top-10 -right-12 text-5xl text-[#FF7EB9]/40 animate-pulse hidden md:block">✿</span>
         </div>
       </header>
 
-      {/* 3. 進入按鈕 (加上 Link) */}
+      {/* 3. 進入按鈕 */}
       <div className="absolute bottom-24">
         <Link href="/about" className="group cursor-pointer block relative active:scale-95 transition-transform">
           <div className="relative">
