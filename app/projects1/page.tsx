@@ -17,7 +17,7 @@ export default function DigitalProjects() {
     {
       id: "grad",
       title: "感知漂流：內在宇宙觀測計劃",
-      desc: "畢業製作。透過眼動追蹤、手部、頭部偵測技術作為感官延伸，讓體驗者構建屬於自己的星球。",
+      desc: "畢業製作。透過視線的落點、手勢的選擇、頭部的轉向作為感官延伸，在暫時脫離既有框架的漂流之中，個體得以重新構建屬於自己的星球。",
       color: "#FF7EB9",
       images: ["/grad-1.jpg", "/grad-2.jpg"],
       fit: "cover",
@@ -25,24 +25,24 @@ export default function DigitalProjects() {
     },
     {
       id: "ubike",
-      title: "Ubike 2.0 介面服務重新設計",
-      desc: "針對通勤族痛點，透過優化租借決策路徑與站點狀態提示，重新梳理地圖交互與資訊層級。",
+      title: "YouBike: More Than a Ride",
+      desc: "優化租借流程與站點狀態提示，重新設計資訊層級、App介面與新增代表人物LUMO，從需求出發打造生活化、充滿陪伴感的App。",
       color: "#70D6FF",
       images: ["/ubike-1.png", "/ubike-2.png"],
       fit: "cover"
     },
     {
       id: "tpass",
-      title: "TPASS 2.0：公共運輸票證研究",
-      desc: "透過問卷、訪談、社群觀察等方式，針對高頻率通勤族研究與痛點挖掘，以此結果作為優化Tpass官網的依據，重新設計資訊架構、增加回饋金即時查看功能。",
+      title: "TPASS 行政院通勤月票使用研究",
+      desc: "正在進行中。透過問卷、訪談、社群觀察等方式，針對高頻率通勤族研究與痛點挖掘，以此結果作為優化Tpass官網的依據，重新設計資訊架構、增加回饋金即時查看功能。",
       color: "#FF9F43",
-      images: ["/tpass-1.jpg", "/tpass-2.jpg"],
+      images: ["/tpass-1.jpg"],
       fit: "cover"
     },
     {
       id: "monkey",
-      title: "JS Interactive：山道猴子網頁遊戲",
-      desc: "使用 JavaScript 開發的側向捲軸遊戲，將迷因文本轉譯為遊戲機制，結合動態物理碰撞偵測與即時分數排行，實現高互動性的敘事體驗。",
+      title: "JavaScript 遊戲：三道猴子",
+      desc: "遊戲發想自熱門影片《山道猴子的一生》，玩家控制摩托車騎士移動，目標是在彎曲的山路上躲避障礙物，並遵守交通規則，盡量生存更長的時間。",
       color: "#2ECC71",
       images: ["/monkey-1.jpg"],
       fit: "cover"

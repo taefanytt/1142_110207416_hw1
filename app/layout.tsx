@@ -28,11 +28,12 @@ export default function RootLayout({
     { icon: <FaLinkedinIn size={16} />, href: "https://www.linkedin.com/in/zihling-huang-4865b4259/" },
   ];
 
-  const menuItems = [
-    { name: "About Me", href: "/about", color: "#FF7EB9", icon: <FaUser /> },
-    { name: "Projects", href: "/projects", color: "#70D6FF", icon: <FaFolderOpen /> },
-    { name: "Others", href: "/others", color: "#FEE440", icon: <FaHeart /> }
-  ];
+const menuItems = [
+  { name: "About Me", href: "/about", color: "#FF7EB9", icon: <FaUser /> },
+  { name: "Digital Content", href: "/projects1", color: "#70D6FF", icon: <FaFolderOpen /> },
+  { name: "Geo Analysis", href: "/projects2", color: "#A29BFE", icon: <FaFolderOpen /> },
+  { name: "Others", href: "/others", color: "#FEE440", icon: <FaHeart /> }
+];
 
   return (
     <html lang="zh-TW" className={`${geistSans.variable} ${primaryBubbleFont.variable} h-full antialiased`}>

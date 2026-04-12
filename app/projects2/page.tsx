@@ -39,16 +39,16 @@ export default function GeospatialProjects() {
   const projects: Project[] = [
     {
       id: "search",
-      title: "55688 實習：圖資與地址搜尋優化",
-      desc: "在 55688 實習期間，利用模糊搜索技術（Fuzzy Matching）與空間演算法優化 App 地址搜尋準確度。建立自動化測試框架進行地圖圖資校正，有效降低 15% 的圖資誤判率與人工檢核成本。",
+      title: "55688 實習專案：圖資與地址搜尋優化",
+      desc: "此專案主要目的為使用模糊搜索的技術，優化搜尋app的查詢準確度，使用戶能搜尋到更廣泛的範圍，提高用戶的使用者體驗。在專案中負責建立測試框架檢測模型是否提高正確率、測試現有及競品的app、大型地標的範圍繪製及取得點位。",
       color: "#A29BFE", 
       images: ["/search-1.png"],
       fit: "cover"
     },
     {
       id: "submerged",
-      title: "StoryMap：沉沒村莊的集體記憶",
-      desc: "運用 ArcGIS Pro 進行多時序地圖疊合（Map Overlay），透過歷史圖籍與現有 DEM 地形資料對比，視覺化水庫建設淹沒區的聚落變遷，以數位敘事重建消失的地景記憶。",
+      title: "StoryMap競賽：沉沒村莊",
+      desc: "探討翡翠水庫與石門水庫淹沒區之移民與徵收。運用 ArcGIS Pro 與 ArcGIS StoryMaps 的工具製作互動地圖，以古地圖對比出淹沒區的範圍，視覺化呈現水庫建設前後聚落變遷與地方故事，探討歷史與社會影響。",
       color: "#00F5D4",
       images: ["/沉沒村莊1.png", "/沉沒村莊2.png", "/沉沒村莊3.png"],
       fit: "cover"
@@ -56,7 +56,7 @@ export default function GeospatialProjects() {
     {
       id: "sdg",
       title: "交通可及性與 SDG 永續指標評估",
-      desc: "執行全國尺度之空間大數據分析，建構多運具交通圖資網路（Network Analysis）。量化評估城鄉醫療與教育資源之可及性，為永續發展目標提供量化的決策支撐指標。",
+      desc: "執行全國尺度的空間分析，蒐集各縣市的人口、交通、空間數據，使用ArcGIS pro、QGIS、excel等工具計算，以地圖方式呈現出各縣市的「交通可達性」，以此評估台灣在聯合國17項永續目標中的現狀。",
       color: "#FEE440",
       images: ["/sdg-1.png", "/sdg-2.png", "/sdg-3.png"],
       fit: "contain",
@@ -64,8 +64,8 @@ export default function GeospatialProjects() {
     },
     {
       id: "ai",
-      title: "AI 跨域：航測影像之農地違建辨識",
-      desc: "結合卷積神經網絡（CNN）與高解析度遙測影像（Remote Sensing），開發自動化目標偵測模型。精準辨識農地違規建物並即時計算非法開發面積，提升國土監測之行政查緝效率。",
+      title: "AI跨域X永續創新競賽—— 利用影像辨識自動判斷農地違建",
+      desc: "受農地違建議題啟發，決定結合航空攝影測量及AI這兩門課所學，使用影像辨識軟體設定參數後，辨識航照圖中的農地建物，計算農地上建物之面積，實際操作中克服資料不足與辨識精度挑戰，偵測出違法的土地。",
       color: "#000000",
       images: ["/ai-1.png", "/ai-2.png", "/ai-3.png"],
       fit: "cover"
